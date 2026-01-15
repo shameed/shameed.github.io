@@ -102,3 +102,72 @@ footer {
     header h1 { font-size: 1.8rem; }
     .contact-links a { display: block; margin: 10px auto; width: fit-content;}
 }
+
+/* CTA Buttons */
+.cta-buttons { margin: 25px 0; }
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+.btn-primary {
+    background-color: white;
+    color: #003366;
+    border: 2px solid white;
+}
+.btn-primary:hover {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Philosophy Grid */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.philo-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+.philo-card h4 { color: #003366; margin-bottom: 15px; }
+.philo-card i { font-size: 2rem; color: #003366; margin-bottom: 15px; display: block; }
+
+/* Project Metrics */
+.project-metrics {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 15px;
+    background: #eef2f5;
+    border-radius: 5px;
+}
+.project-metrics div {
+    text-align: center;
+}
+.project-metrics strong {
+    display: block;
+    font-size: 1.4rem;
+    color: #003366;
+}
+.project-metrics span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Social Links specific */
+.social-links { margin-top: 20px; font-size: 1.5rem; }
+.social-links a { color: white; margin: 0 10px; opacity: 0.8; }
+.social-links a:hover { opacity: 1; }
