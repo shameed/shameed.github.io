@@ -9,4 +9,4 @@ I specialize in turning legacy monoliths into modern, scalable platforms.
 - 🧠 **Philosophy:** Pragmatic Architecture & Second Brain (Obsidian).
 - 📍 **Location:** Chennai, India (Open to opportunities in **UAE & Germany**).
 
-[🌐 Visit my Portfolio](https://yourusername.github.io) | [Linkedin](YOUR_LINKEDIN_URL)
+[🌐 Visit my Portfolio](https://shameed.github.io) | [Linkedin](https://www.linkedin.com/in/shahul-hameed-udhuman/)
