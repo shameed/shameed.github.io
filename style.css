@@ -171,3 +171,10 @@ footer {
 .social-links { margin-top: 20px; font-size: 1.5rem; }
 .social-links a { color: white; margin: 0 10px; opacity: 0.8; }
 .social-links a:hover { opacity: 1; }
+
+/* Make the first philosophy card span the full width */
+.philosophy-grid .philo-card:first-child {
+    grid-column: 1 / -1;
+    padding: 25px 125px;
+}
+
