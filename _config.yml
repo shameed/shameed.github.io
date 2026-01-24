@@ -1,0 +1,5 @@
+theme: minima
+title: Shahul Hameed Udhuman
+description: Senior Technical Architect · Cloud · Microservices · AI Enablement
+markdown: kramdown
+permalink: /blogs/:title/

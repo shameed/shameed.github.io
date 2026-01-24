@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+
+<article class="post">
+<header class="post-header">
+<h1 class="post-title">{{ page.title }}</h1>
+<p class="post-meta">
+{{ page.date | date: "%B %d, %Y" }}
+{% if page.categories %} · {{ page.categories | join: ", " }}{% endif %}
+</p>
+</header>
+
+
+<div class="post-content">
+{{ content }}
+</div>
+
+
+<footer class="post-footer">
+<hr />
+<p class="post-signoff">
+Written by <strong>Shahul Hameed Udhuman</strong> ·
+<a href="{{ '/' | relative_url }}">Home</a> ·
+<a href="{{ '/#blogs' | relative_url }}">More Posts</a>
+</p>
+</footer>
+{% include mermaid.html %}
+</article>
