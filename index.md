@@ -185,6 +185,6 @@ title: Home
         </div>
     </div>
     <div style="text-align: center; margin-top: 64px">
-        <a href="/assets/Shahul_Hameed_Udhuman_Resume.pdf" class="btn btn-accent">Download Full Resume / CV</a>
+        <a href="/assets/Shameed-Resume-Updated.pdf" class="btn btn-accent">Download Full Resume / CV</a>
     </div>
 </div>

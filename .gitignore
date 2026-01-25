@@ -1,0 +1,11 @@
+# Jekyll build artifacts and caches
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler/Ruby files (if using a Gemfile locally)
+/vendor
+Gemfile.lock
+
+run_local.ps1
