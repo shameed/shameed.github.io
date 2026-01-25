@@ -27,7 +27,7 @@
 
         // Check saved theme
         const savedTheme = localStorage.getItem('theme');
-        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         let isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
 
