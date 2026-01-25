@@ -68,6 +68,60 @@
             </a>
           </li>
         </ul>
+        <button id="theme-toggle" class="btn btn-glass" aria-label="Toggle Dark Mode"
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 10px; border-radius: 50%;">
+    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+</button>
+
+<script>
+    (function () {
+        const toggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+        const root = document.documentElement;
+
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        let isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
+
+        function updateTheme() {
+            if (isLight) {
+                root.setAttribute('data-theme', 'light');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                root.removeAttribute('data-theme');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+
+        updateTheme();
+
+        toggleBtn.addEventListener('click', () => {
+            isLight = !isLight;
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            updateTheme();
+        });
+    })();
+</script>
       </nav>
     </div>
   </div>
@@ -75,7 +129,7 @@
 
   <main class="container">
     <div class="post-header-container">
-     <div class="post-header container-narrow">
+    <div class="post-header container-narrow">
         
         <span class="project-meta" style="justify-content: center">IDENTITY & API PLATFORMS</span>
         
@@ -83,21 +137,22 @@
             API-First Architecture in Regulated Domains
         </h1>
     </div>
-</div>   
-<div class="container-narrow" >
+</div>
+<div class="container-narrow">
     <div class="post-meta-row">
         <div>
-            <a href="/blogs/" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
+            <a href="/blogs/" class="btn"
+                style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
         </div>
         <div style="padding: 12px 28px;">
-<span>January 26, 2026</span> · <span>1 min read</span>
+            <span>January 26, 2026</span> · <span>1 min read</span>
         </div>
-            
+
     </div>
-    
+
     <article>
         <div class="glass-panel reading-container article-content">
-             <p>API-first architecture is not about REST endpoints — it’s about <strong>organizational clarity</strong>.</p>
+            <p>API-first architecture is not about REST endpoints — it’s about <strong>organizational clarity</strong>.</p>
 
 <p>In regulated systems, APIs become <strong>contracts</strong>, not just interfaces.</p>
 
@@ -179,30 +234,135 @@ Gateway --&gt; Audit
 
 <p>API-first is less about technology — more about <strong>discipline</strong>.</p>
 
+
+            
+            <div class="post-tags">
+                <strong>Tags: </strong>
+                
+                <span class="post-tag">architecture</span>
+                
+                <span class="post-tag">modernization</span>
+                
+                <span class="post-tag">microservices</span>
+                
+            </div>
+            
         </div>
     </article>
+
+    <div class="related-posts">
+        <h3>Related Posts</h3>
+        <ul class="related-posts-list">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            <li>
+                <a href="/blogs/microservices-anti-patterns/" class="related-post-link">
+                    <span class="related-title">Microservices Anti-Patterns to Avoid</span>
+                    <span class="related-post-date">February 01, 2026</span>
+                </a>
+            </li>
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li>
+                <a href="/blogs/legacy-to-microservices/" class="related-post-link">
+                    <span class="related-title">Modernizing Legacy Platforms Without a Big-Bang Rewrite</span>
+                    <span class="related-post-date">January 26, 2026</span>
+                </a>
+            </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+
     <!-- Post Footer Navigation -->
-    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-        <a href="/blogs/" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
+    <div
+        style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <a href="/blogs/" class="btn"
+            style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
     </div>
 </div>
- <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        securityLevel: 'loose',
-        themeVariables: {
-            fontFamily: 'Inter, system-ui, sans-serif',
-            primaryColor: '#020617',
-            primaryTextColor: '#e5e7eb',
-            lineColor: '#3b82f6'
-        }
+
+<script src="/assets/js/blog-features.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Find all code blocks with language-mermaid class (Jekyll kramdown)
+        const mermaidBlocks = document.querySelectorAll('pre.highlight code.language-mermaid, .language-mermaid .highlight pre.highlight code');
+
+        mermaidBlocks.forEach(block => {
+            // Create a div with class mermaid for the library to target
+            const div = document.createElement('div');
+            div.classList.add('mermaid');
+            div.textContent = block.textContent;
+
+            // Replace the entire pre/code structure with the mermaid div
+            const pre = block.closest('pre');
+            const container = pre.closest('div.highlighter-rouge, div.language-mermaid'); // Jekyll container
+
+            if (container) {
+                container.parentNode.replaceChild(div, container);
+            } else {
+                pre.parentNode.replaceChild(div, pre);
+            }
+        });
+
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose'
+        });
     });
 </script>
-
-
   </main>
 
   <footer>
@@ -223,7 +383,7 @@ Gateway --&gt; Audit
              c0 5.42 3.3 6.61 6.44 7
              A3.37 3.37 0 0 0 8 18.13V22" />
           </svg>
-        </a>
+        </a> &dot;
 
         <a href="https://www.linkedin.com/in/shahul-hameed-udhuman/" class="social-icon" aria-label="LinkedIn"
           target="_blank">

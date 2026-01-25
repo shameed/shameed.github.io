@@ -1,15 +1,10 @@
 ---
-
 layout: post
-
 title: "API-First Architecture in Regulated Domains"
-
 date: 2026-01-26
-
 categories: [Identity & API Platforms]
-
+tags: [architecture, modernization, microservices]
 excerpt: "Designing secure, scalable APIs that survive audits, integrations, and long-term evolution."
-
 ---
 
   

@@ -12,43 +12,39 @@ permalink: /blogs/
         </div>
     </section>
     <div class="blog-index-layout">
+
         <aside>
             <div class="glass-panel sidebar-sticky">
+                <input type="text" id="blog-search" placeholder="Search blogs..." style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary);">
+                
                 <h4 style="margin-bottom: 16px; font-weight: 600">Filter Topic</h4>
                 <ul class="category-list">
-                    <li><a href="#" class="active">All Posts</a></li>
-                    <li><a href="#">Architecture Patterns</a></li>
-                    <li><a href="#">Cloud & Infra</a></li>
-                    <li><a href="#">Security & Identity</a></li>
-                    <li><a href="#">Engineering Strategy</a></li>
-                    <li><a href="#">Notes &Snippets</a></li>
+                    <li><a href="#" class="category-filter active" data-category="All Posts">All Posts</a></li>
+                    {% for category in site.categories %}
+                    <li><a href="#" class="category-filter" data-category="{{ category[0] }}">{{ category[0] }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </aside>
-        <main class="post-list">
-            {% for category_item in site.categories %}
-            {% assign category_name = category_item[0] %}
-            {% assign category_posts = category_item[1] %}
-            <!-- <h2 class="section-title">{{ category_name }}</h2> -->
-            <div class="post-category mb-8">
-              {% for post in category_posts %}
-              <div class="glass-panel post-card glass-card-interactive">
-                  <span class="project-meta">{{ category_name }}</span>
-                  <h2>
-                      <a href="{{ post.url | relative_url }}"> {{ post.title }}</a>
-                  </h2>
-                  <div class="post-meta-row">
-                      <span>{{ post.date | date: "%B %d, %Y" }}</span> · <span>{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
-                  </div>
-                  <p class="text-muted">
-                    {{ post.excerpt | strip_html | truncate: 120 }}
-                  </p>
-                  <a href="{{ post.url | relative_url }}" class="read-more">Read Full Post →</a>
-              </div>  
-              {% endfor %}
-            </div>
-            {% endfor %}           
+        <main class="post-list" id="post-list-container">
+            {% for post in site.posts %}
+            <div class="glass-panel post-card glass-card-interactive post-item" data-category="{{ post.categories | first }}" data-title="{{ post.title }}">
+                <span class="project-meta">{{ post.categories | first }}</span>
+                <h2>
+                    <a href="{{ post.url | relative_url }}"> {{ post.title }}</a>
+                </h2>
+                <div class="post-meta-row">
+                    <span>{{ post.date | date: "%B %d, %Y" }}</span> · <span>{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+                </div>
+                <p class="text-muted">
+                   {{ post.excerpt | strip_html | truncate: 120 }}
+                </p>
+                <a href="{{ post.url | relative_url }}" class="read-more">Read Full Post →</a>
+            </div>  
+            {% endfor %}
         </main>
+        <script src="{{ '/assets/js/blog-features.js' | relative_url }}"></script>
+
     </div>
 </div>
 
