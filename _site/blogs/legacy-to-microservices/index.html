@@ -68,6 +68,60 @@
             </a>
           </li>
         </ul>
+        <button id="theme-toggle" class="btn btn-glass" aria-label="Toggle Dark Mode"
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 10px; border-radius: 50%;">
+    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+</button>
+
+<script>
+    (function () {
+        const toggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+        const root = document.documentElement;
+
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        let isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
+
+        function updateTheme() {
+            if (isLight) {
+                root.setAttribute('data-theme', 'light');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                root.removeAttribute('data-theme');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+
+        updateTheme();
+
+        toggleBtn.addEventListener('click', () => {
+            isLight = !isLight;
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            updateTheme();
+        });
+    })();
+</script>
       </nav>
     </div>
   </div>
@@ -75,7 +129,7 @@
 
   <main class="container">
     <div class="post-header-container">
-     <div class="post-header container-narrow">
+    <div class="post-header container-narrow">
         
         <span class="project-meta" style="justify-content: center">ARCHITECTURE & MODERNIZATION</span>
         
@@ -83,21 +137,22 @@
             Modernizing Legacy Platforms Without a Big-Bang Rewrite
         </h1>
     </div>
-</div>   
-<div class="container-narrow" >
+</div>
+<div class="container-narrow">
     <div class="post-meta-row">
         <div>
-            <a href="/blogs/" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
+            <a href="/blogs/" class="btn"
+                style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
         </div>
         <div style="padding: 12px 28px;">
-<span>January 26, 2026</span> · <span>1 min read</span>
+            <span>January 26, 2026</span> · <span>3 min read</span>
         </div>
-            
+
     </div>
-    
+
     <article>
         <div class="glass-panel reading-container article-content">
-             <p>Modernizing a legacy enterprise platform is rarely a technical problem alone — it’s a <strong>risk-management exercise</strong>.</p>
+            <p>Modernizing a legacy enterprise platform is rarely a technical problem alone — it’s a <strong>risk-management exercise</strong>.</p>
 
 <p>In regulated domains like Insurance, a big-bang rewrite is usually a <strong>career-limiting move</strong>. The system works, customers depend on it, and downtime is not an option.</p>
 
@@ -117,27 +172,58 @@
 
 <h3 id="architecture-pattern">Architecture Pattern</h3>
 
-<pre><code class="language-mermaid">
-graph LR
-
+<pre><code class="language-mermaid">graph LR
 UI[UI / SPA]
-
 API[API Gateway]
-
 Legacy[Legacy Monolith]
-
 Svc1[New Service]
-
 Svc2[New Service]  
-
 UI --&gt; API
-
 API --&gt; Legacy
-
 API --&gt; Svc1
-
 API --&gt; Svc2
 </code></pre>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ./src/app/example/example.component.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Assume a Post interface and some DATA are defined elsewhere</span>
+<span class="kr">interface</span> <span class="nx">Post</span> <span class="p">{</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">body</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">DATA</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">author</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jane Doe</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">thePosts</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">First Post</span><span class="dl">'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Content of the first post.</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Second Post</span><span class="dl">'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Content of the second post.</span><span class="dl">'</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app-example</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./example.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./example.component.css</span><span class="dl">'</span><span class="p">]</span> <span class="c1">// Optional CSS file</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">ExampleComponent</span> <span class="k">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nl">username</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">totalPosts</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">allPosts</span><span class="p">:</span> <span class="nx">Post</span><span class="p">[];</span>
+
+  <span class="nf">deletePost</span><span class="p">(</span><span class="nx">index</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">allPosts</span><span class="p">.</span><span class="nf">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">totalPosts</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">allPosts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nf">ngOnInit</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">DATA</span><span class="p">.</span><span class="nx">author</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">totalPosts</span> <span class="o">=</span> <span class="nx">DATA</span><span class="p">.</span><span class="nx">thePosts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">allPosts</span> <span class="o">=</span> <span class="nx">DATA</span><span class="p">.</span><span class="nx">thePosts</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <h3 id="key-lessons">Key Lessons</h3>
 
@@ -150,30 +236,135 @@ API --&gt; Svc2
 <h3 id="final-thought">Final Thought</h3>
 <p>Modernization succeeds when architecture evolves <strong>incrementally</strong>, with business trust intact.</p>
 
+
+            
+            <div class="post-tags">
+                <strong>Tags: </strong>
+                
+                <span class="post-tag">architecture</span>
+                
+                <span class="post-tag">modernization</span>
+                
+                <span class="post-tag">microservices</span>
+                
+            </div>
+            
         </div>
     </article>
+
+    <div class="related-posts">
+        <h3>Related Posts</h3>
+        <ul class="related-posts-list">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            <li>
+                <a href="/blogs/microservices-anti-patterns/" class="related-post-link">
+                    <span class="related-title">Microservices Anti-Patterns to Avoid</span>
+                    <span class="related-post-date">February 01, 2026</span>
+                </a>
+            </li>
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li>
+                <a href="/blogs/api-first-regulated/" class="related-post-link">
+                    <span class="related-title">API-First Architecture in Regulated Domains</span>
+                    <span class="related-post-date">January 26, 2026</span>
+                </a>
+            </li>
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+        </ul>
+    </div>
+
     <!-- Post Footer Navigation -->
-    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-        <a href="/blogs/" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
+    <div
+        style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <a href="/blogs/" class="btn"
+            style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
     </div>
 </div>
- <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        securityLevel: 'loose',
-        themeVariables: {
-            fontFamily: 'Inter, system-ui, sans-serif',
-            primaryColor: '#020617',
-            primaryTextColor: '#e5e7eb',
-            lineColor: '#3b82f6'
-        }
+
+<script src="/assets/js/blog-features.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Find all code blocks with language-mermaid class (Jekyll kramdown)
+        const mermaidBlocks = document.querySelectorAll('pre.highlight code.language-mermaid, .language-mermaid .highlight pre.highlight code');
+
+        mermaidBlocks.forEach(block => {
+            // Create a div with class mermaid for the library to target
+            const div = document.createElement('div');
+            div.classList.add('mermaid');
+            div.textContent = block.textContent;
+
+            // Replace the entire pre/code structure with the mermaid div
+            const pre = block.closest('pre');
+            const container = pre.closest('div.highlighter-rouge, div.language-mermaid'); // Jekyll container
+
+            if (container) {
+                container.parentNode.replaceChild(div, container);
+            } else {
+                pre.parentNode.replaceChild(div, pre);
+            }
+        });
+
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose'
+        });
     });
 </script>
-
-
   </main>
 
   <footer>
@@ -194,7 +385,7 @@ API --&gt; Svc2
              c0 5.42 3.3 6.61 6.44 7
              A3.37 3.37 0 0 0 8 18.13V22" />
           </svg>
-        </a>
+        </a> &dot;
 
         <a href="https://www.linkedin.com/in/shahul-hameed-udhuman/" class="social-icon" aria-label="LinkedIn"
           target="_blank">

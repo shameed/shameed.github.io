@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post-header-container">
-     <div class="post-header container-narrow">
+    <div class="post-header container-narrow">
         {% for category in page.categories %}
         <span class="project-meta" style="justify-content: center">{{ category | upcase }}</span>
         {% endfor %}
@@ -10,28 +10,78 @@ layout: default
             {{ page.title }}
         </h1>
     </div>
-</div>   
-<div class="container-narrow" >
+</div>
+<div class="container-narrow">
     <div class="post-meta-row">
         <div>
-            <a href="{{ '/blogs/' | relative_url }}" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
+            <a href="{{ '/blogs/' | relative_url }}" class="btn"
+                style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
         </div>
         <div style="padding: 12px 28px;">
-<span>{{ page.date | date: "%B %d, %Y" }}</span> · <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+            <span>{{ page.date | date: "%B %d, %Y" }}</span> · <span>{{ content | number_of_words | divided_by: 200 |
+                plus: 1 }} min read</span>
         </div>
-            
+
     </div>
-    
+
     <article>
         <div class="glass-panel reading-container article-content">
-             {{ content }}
+            {{ content }}
+
+            {% if page.tags.size > 0 %}
+            <div class="post-tags">
+                <strong>Tags: </strong>
+                {% for tag in page.tags %}
+                <span class="post-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
     </article>
+
+    <div class="related-posts">
+        <h3>Related Posts</h3>
+        <ul class="related-posts-list">
+            {% assign maxRelated = 5 %}
+            {% assign minCommonTags = 1 %}
+            {% assign maxRelatedCounter = 0 %}
+
+            {% for post in site.posts %}
+            {% assign sameTagCount = 0 %}
+
+            {% for tag in post.tags %}
+            {% if post.url != page.url %}
+            {% if page.tags contains tag %}
+            {% assign sameTagCount = sameTagCount | plus: 1 %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            {% if sameTagCount >= minCommonTags %}
+            <li>
+                <a href="{{ post.url | relative_url }}" class="related-post-link">
+                    <span class="related-title">{{ post.title }}</span>
+                    <span class="related-post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                </a>
+            </li>
+            {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+            {% if maxRelatedCounter >= maxRelated %}
+            {% break %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
     <!-- Post Footer Navigation -->
-    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-        <a href="{{ '/blogs/' | relative_url }}" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
+    <div
+        style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <a href="{{ '/blogs/' | relative_url }}" class="btn"
+            style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
     </div>
 </div>
- {% include mermaid.html %}
 
+<script src="{{ '/assets/js/blog-features.js' | relative_url }}"></script>
+{% include mermaid.html %}
