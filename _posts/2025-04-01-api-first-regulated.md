@@ -6,7 +6,7 @@ title: "API-First Architecture in Regulated Domains"
 
 date: 2026-01-26
 
-categories: [Architecture, APIs, Security]
+categories: [Identity & API Platforms]
 
 excerpt: "Designing secure, scalable APIs that survive audits, integrations, and long-term evolution."
 

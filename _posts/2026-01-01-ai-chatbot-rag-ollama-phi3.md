@@ -6,7 +6,7 @@ title: "Building an Enterprise AI Chatbot Using RAG + Ollama + Phi-3"
 
 date: 2026-01-26
 
-categories: [AI, Architecture]
+categories: [Applied AI & Intelligent Systems]
 
 excerpt: "Moving beyond demos to practical AI assistants using local models and RAG pipelines."
 

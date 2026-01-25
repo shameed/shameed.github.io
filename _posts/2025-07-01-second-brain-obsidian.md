@@ -6,7 +6,7 @@ title: "Building a Second Brain Using Obsidian (Architect Edition)"
 
 date: 2026-01-26
 
-categories: [Productivity, Knowledge Management]
+categories: [Systems Thinking & Workflows]
 
 excerpt: "How architects can manage complexity using Obsidian, PARA, and structured thinking."
 

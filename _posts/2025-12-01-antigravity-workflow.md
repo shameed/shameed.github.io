@@ -6,7 +6,7 @@ title: "The Anti-Gravity Workflow for Deep Technical Work"
 
 date: 2026-01-26
 
-categories: [Productivity, Deep Work]
+categories: [Systems Thinking & Workflows]
 
 excerpt: "A practical system to protect focus in high-responsibility technical roles."
 

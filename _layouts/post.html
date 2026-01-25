@@ -1,30 +1,37 @@
 ---
 layout: default
 ---
-
-
-<article class="post">
-<header class="post-header">
-<h1 class="post-title">{{ page.title }}</h1>
-<p class="post-meta">
-{{ page.date | date: "%B %d, %Y" }}
-{% if page.categories %} · {{ page.categories | join: ", " }}{% endif %}
-</p>
-</header>
-
-
-<div class="post-content">
-{{ content }}
+<div class="post-header-container">
+     <div class="post-header container-narrow">
+        {% for category in page.categories %}
+        <span class="project-meta" style="justify-content: center">{{ category | upcase }}</span>
+        {% endfor %}
+        <h1 class="post-title-large">
+            {{ page.title }}
+        </h1>
+    </div>
+</div>   
+<div class="container-narrow" >
+    <div class="post-meta-row">
+        <div>
+            <a href="{{ '/blogs/' | relative_url }}" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
+        </div>
+        <div style="padding: 12px 28px;">
+<span>{{ page.date | date: "%B %d, %Y" }}</span> · <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+        </div>
+            
+    </div>
+    
+    <article>
+        <div class="glass-panel reading-container article-content">
+             {{ content }}
+        </div>
+    </article>
+    <!-- Post Footer Navigation -->
+    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <a href="{{ '/blogs/' | relative_url }}" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
+    </div>
 </div>
+ {% include mermaid.html %}
 
-
-<footer class="post-footer">
-<hr />
-<p class="post-signoff">
-Written by <strong>Shahul Hameed Udhuman</strong> ·
-<a href="{{ '/' | relative_url }}">Home</a> ·
-<a href="{{ '/#blogs' | relative_url }}">More Posts</a>
-</p>
-</footer>
-{% include mermaid.html %}
-</article>

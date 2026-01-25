@@ -6,7 +6,7 @@ title: "OpenIddict Integration in Enterprise Microservices"
 
 date: 2026-01-26
 
-categories: [Security, Identity, Microservices]
+categories: [Identity & API Platforms]
 
 excerpt: "Using OpenIddict to build secure, extensible identity platforms for enterprise systems."
 

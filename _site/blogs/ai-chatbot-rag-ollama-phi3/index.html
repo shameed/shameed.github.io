@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building an Enterprise AI Chatbot Using RAG + Ollama + Phi-3 | Shahul Hameed Udhuman</title>
+  <meta name="description" content="Senior Technical Architect · Cloud · Microservices · AI Enablement">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Add any blog specific meta -->
+  
+</head>
+
+<body>
+
+  <header>
+  <div class="container-wide nav">
+    <a href="/" class="brand">
+      <div class="logo">SH</div>
+      <div>
+        <h1 style="margin: 0; font-size: 1rem">Shahul Hameed Udhuman</h1>
+        <div style="font-size: 0.8rem; color: var(--muted)">
+          Senior Technical Architect | Enterprise Modernization | Cloud & AI
+          Enablement
+        </div>
+      </div>
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 1rem" class="nav-right">
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blogs/">Blogs</a></li>
+          <li>
+            <a href="https://github.com/shameed" class="social-icon" aria-label="GitHub" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-4.418 1.5-4.418-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61
+             c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18 3.77
+             A5.07 5.07 0 0 0 17.91 1
+             S16.73.65 14 2.48
+             a13.38 13.38 0 0 0-6 0
+             C5.27.65 4.09 1 4.09 1
+             A5.07 5.07 0 0 0 4 3.77
+             a5.44 5.44 0 0 0-1.5 3.78
+             c0 5.42 3.3 6.61 6.44 7
+             A3.37 3.37 0 0 0 8 18.13V22" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/shahul-hameed-udhuman/" class="social-icon" aria-label="LinkedIn"
+              target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7
+             a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7
+             a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <main class="container">
+    <div class="post-header-container">
+     <div class="post-header container-narrow">
+        
+        <span class="project-meta" style="justify-content: center">APPLIED AI & INTELLIGENT SYSTEMS</span>
+        
+        <h1 class="post-title-large">
+            Building an Enterprise AI Chatbot Using RAG + Ollama + Phi-3
+        </h1>
+    </div>
+</div>   
+<div class="container-narrow" >
+    <div class="post-meta-row">
+        <div>
+            <a href="/blogs/" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--accent);">← All Blogs</a>
+        </div>
+        <div style="padding: 12px 28px;">
+<span>January 26, 2026</span> · <span>1 min read</span>
+        </div>
+            
+    </div>
+    
+    <article>
+        <div class="glass-panel reading-container article-content">
+             <p>Enterprise AI is not about ChatGPT wrappers.</p>
+
+<p>It’s about <strong>context, control, and trust</strong>.</p>
+
+<h3 id="architecture">Architecture</h3>
+<pre><code class="language-mermaid">graph TD
+
+UI[Web / App UI]
+
+API[Backend API]
+
+RAG[RAG Layer]
+
+Vector[Milvus Vector DB]
+
+LLM[Ollama + Phi-3]
+
+Docs[Enterprise Docs]
+
+  
+
+UI --&gt; API
+
+API --&gt; RAG
+
+RAG --&gt; Vector
+
+Vector --&gt; Docs
+
+RAG --&gt; LLM
+
+LLM --&gt; API
+</code></pre>
+
+<h3 id="why-local-models">Why Local Models</h3>
+
+<ul>
+  <li>
+    <p>Data privacy</p>
+  </li>
+  <li>
+    <p>Predictable cost</p>
+  </li>
+  <li>
+    <p>Deployment control</p>
+  </li>
+</ul>
+
+<h3 id="real-use-cases">Real Use Cases</h3>
+
+<ul>
+  <li>
+    <p>Claims assistance</p>
+  </li>
+  <li>
+    <p>Policy queries</p>
+  </li>
+  <li>
+    <p>Operational support</p>
+  </li>
+</ul>
+
+<h3 id="final-take">Final Take</h3>
+
+<p>AI succeeds when it augments humans — not replaces them.</p>
+
+        </div>
+    </article>
+    <!-- Post Footer Navigation -->
+    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <a href="/blogs/" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
+    </div>
+</div>
+ <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        securityLevel: 'loose',
+        themeVariables: {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            primaryColor: '#020617',
+            primaryTextColor: '#e5e7eb',
+            lineColor: '#3b82f6'
+        }
+    });
+</script>
+
+
+  </main>
+
+  <footer>
+  <div class="container-wide">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <div>&copy; 2026 Shahul Hameed Udhuman</div>
+      <div><a href="https://github.com/shameed" class="social-icon" aria-label="GitHub" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-4.418 1.5-4.418-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61
+             c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18 3.77
+             A5.07 5.07 0 0 0 17.91 1
+             S16.73.65 14 2.48
+             a13.38 13.38 0 0 0-6 0
+             C5.27.65 4.09 1 4.09 1
+             A5.07 5.07 0 0 0 4 3.77
+             a5.44 5.44 0 0 0-1.5 3.78
+             c0 5.42 3.3 6.61 6.44 7
+             A3.37 3.37 0 0 0 8 18.13V22" />
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/shahul-hameed-udhuman/" class="social-icon" aria-label="LinkedIn"
+          target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7
+             a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7
+             a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>

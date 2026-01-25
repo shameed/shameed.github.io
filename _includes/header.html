@@ -1,16 +1,53 @@
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand">
-      <a href="{{ '/' | relative_url }}">Shahul Hameed Udhuman</a>
-      <span class="tagline">Senior Technical Architect</span>
-    </div>
+<header>
+  <div class="container-wide nav">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <div class="logo">SH</div>
+      <div>
+        <h1 style="margin: 0; font-size: 1rem">Shahul Hameed Udhuman</h1>
+        <div style="font-size: 0.8rem; color: var(--muted)">
+          Senior Technical Architect | Enterprise Modernization | Cloud & AI
+          Enablement
+        </div>
+      </div>
+    </a>
 
-    <nav class="nav">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/#blogs' | relative_url }}">Blogs</a>
-      <a href="{{ '/Shahul_Hameed_Udhuman_Resume.pdf' | relative_url }}"
-        >Resume</a
-      >
-    </nav>
+    <div style="display: flex; align-items: center; gap: 1rem" class="nav-right">
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/blogs/' | relative_url }}">Blogs</a></li>
+          <li>
+            <a href="https://github.com/shameed" class="social-icon" aria-label="GitHub" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-4.418 1.5-4.418-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61
+             c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18 3.77
+             A5.07 5.07 0 0 0 17.91 1
+             S16.73.65 14 2.48
+             a13.38 13.38 0 0 0-6 0
+             C5.27.65 4.09 1 4.09 1
+             A5.07 5.07 0 0 0 4 3.77
+             a5.44 5.44 0 0 0-1.5 3.78
+             c0 5.42 3.3 6.61 6.44 7
+             A3.37 3.37 0 0 0 8 18.13V22" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/shahul-hameed-udhuman/" class="social-icon" aria-label="LinkedIn"
+              target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7
+             a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7
+             a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
