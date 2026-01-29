@@ -2,7 +2,7 @@
 layout: post
 title: "Local RAG Chatbots with Ollama and Phi-3"
 date: 2026-01-26
-categories: [AI & ML]
+categories: [AI & Engineering]
 tags: [ai, ollama, phi-3, rag, embeddings]
 excerpt: "How to build a private, high-performance RAG pipeline on your local machine using modern LLMs and vector stores."
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Microservices Anti-Patterns to Avoid"
 date: 2026-02-01
-categories: [Architecture & Patterns]
+categories: [Cloud & Architecture]
 tags: [microservices, architecture, devops, mistakes]
 excerpt: "Learn from the failures of others. A roadmap to avoiding common pitfalls in distributed systems."
 ---
