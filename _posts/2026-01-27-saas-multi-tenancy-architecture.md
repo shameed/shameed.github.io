@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Architect's Guide to Multi-Tenant SaaS Foundations"
-date: 2026-02-15
+date: 2026-01-27
 categories: [Cloud & Architecture]
 tags: [saas, multi-tenancy, cloud-architecture, scalability]
 excerpt: "A deep dive into isolation models, data partitioning strategies, and the operational complexities of building enterprise-grade SaaS."

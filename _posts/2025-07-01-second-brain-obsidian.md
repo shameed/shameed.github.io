@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building a Second Brain Using Obsidian"
-date: 2026-07-01
+date: 2025-07-01
 categories: [Productivity & Knowledge]
 tags: [obsidian, productivity, knowledge-management, zettelkasten]
 excerpt: "An architectural approach to managing personal knowledge, turning scattered thoughts into a connected network of ideas."
