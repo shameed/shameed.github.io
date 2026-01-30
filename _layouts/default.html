@@ -12,23 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  {% if page.url contains 'blogs' or page.layout == 'post' %}
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
 
-    // Convert Kramdown code blocks to mermaid divs
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('pre.highlight > code.language-mermaid').forEach((block) => {
-        const div = document.createElement('div');
-        div.className = 'mermaid';
-        div.textContent = block.textContent;
-        const pre = block.parentElement;
-        pre.parentElement.replaceChild(div, pre);
-      });
-    });
-  </script>
-  {% endif %}
 </head>
 
 <body>
