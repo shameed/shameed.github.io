@@ -4,6 +4,7 @@ title: "Modernizing Legacy Platforms Without a Big-Bang Rewrite"
 date: 2025-01-01
 categories: [Cloud & Architecture]
 tags: [architecture, modernization, microservices]
+image: /assets/images/modernizing-legacy.png
 excerpt: "A pragmatic guide to the Strangler Fig pattern, incremental migration, and risk management in enterprise software evolution."
 ---
 
