@@ -6,3 +6,11 @@ url: "https://shameed.github.io"
 baseurl: ""
 
 future: true
+
+exclude:
+  - linkedin-posts
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
