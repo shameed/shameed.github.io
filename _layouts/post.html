@@ -29,7 +29,7 @@ layout: default
             {% if page.image %}
             <div class="post-featured-image" style="margin-bottom: 2rem;">
                 <img src="{{ page.image | relative_url }}" alt="{{ page.title }}"
-                    style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); object-fit: cover;">
+                    style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
             </div>
             {% endif %}
             {{ content }}
