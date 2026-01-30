@@ -3,7 +3,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         // Find all code blocks with language-mermaid class (Jekyll kramdown)
-        const mermaidBlocks = document.querySelectorAll('pre.highlight code.language-mermaid, .language-mermaid .highlight pre.highlight code');
+        const mermaidBlocks = document.querySelectorAll('pre > code.language-mermaid');
 
         mermaidBlocks.forEach(block => {
             // Create a div with class mermaid for the library to target
