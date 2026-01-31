@@ -2,6 +2,7 @@
 layout: post
 title: "Building ProTeam: An Autonomous AI Agent Team Framework"
 date: 2026-01-29
+image: /assets/images/headers/2026-01-29-building-proteam-ai-agent-framework.png
 categories: [AI & Engineering]
 tags: [AI, AgenticAI, SoftwareDevelopment, Automation, ProTeam, Framework]
 excerpt: "How a simple 'list skills' command evolved into a complete autonomous development workflow."
