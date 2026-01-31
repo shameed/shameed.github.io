@@ -2,6 +2,7 @@
 layout: post
 title: "Enterprise OIDC Integration with OpenIddict"
 date: 2025-08-01
+image: /assets/images/headers/2025-08-01-openiddict-integration.png
 categories: [Security & API]
 tags: [dotnet, security, openiddict, oidc, oauth2]
 excerpt: "A deep dive into building a custom, high-performance Identity Provider in .NET using OpenIddict."
