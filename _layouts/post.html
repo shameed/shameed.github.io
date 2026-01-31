@@ -80,12 +80,22 @@ layout: default
     </div>
 
     <!-- Post Footer Navigation -->
-    <div
-        style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-        <a href="{{ '/blogs/' | relative_url }}" class="btn"
-            style="background: transparent; border: 1px solid var(--border); color: var(--muted);">← All Blogs</a>
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-            style="color: var(--muted); font-size: 0.9rem;">Back to Top ↑</a>
+    <!-- Post Footer Navigation -->
+    <div class="post-navigation-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <div style="width: 45%; text-align: left;">
+            {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="btn-link" style="color: var(--accent); text-decoration: none; font-weight: 500;">
+                ← {{ page.previous.title }}
+            </a>
+            {% endif %}
+        </div>
+        <div style="width: 45%; text-align: right;">
+            {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="btn-link" style="color: var(--accent); text-decoration: none; font-weight: 500;">
+                {{ page.next.title }} →
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
 
