@@ -49,24 +49,3 @@ permalink: /blogs/
 </div>
 
 
-<!-- {% for category in site.categories %}
-<section style="margin-bottom: 3rem;">
-  <h2 style="color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-    {{ category[0] | capitalize }}
-  </h2>
-  
-  <div class="blog-grid">
-    {% for post in category[1] %}
-    <a href="{{ post.url | relative_url }}" class="card post-card">
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-      <div class="post-meta">
-        <span>{{ post.date | date: "%B %d, %Y" }}</span>
-        <span>·</span>
-        <span>{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</section>
-{% endfor %} -->

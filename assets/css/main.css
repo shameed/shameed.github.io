@@ -345,6 +345,12 @@
      padding: 16px !important;
    }
 
+   .nav,
+   .container-narrow {
+     padding: 8px;
+   }
+
+
    .nav-header {
      padding: 12px 0;
      margin-bottom: 24px;
