@@ -329,6 +329,16 @@
    .grid-2 {
      grid-template-columns: 1fr;
    }
+
+   /* Mobile Header Fixes */
+   .brand-text {
+     display: none;
+   }
+
+   header {
+     position: relative;
+     border-bottom: none;
+   }
  }
 
  .focus-card {
