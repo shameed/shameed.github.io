@@ -2,6 +2,7 @@
 layout: post
 title: "The Antigravity Workflow: AI-Driven Development"
 date: 2025-12-01
+image: /assets/images/headers/2025-12-01-antigravity-workflow.png
 categories: [AI & Engineering]
 tags: [ai, productivity, antigravity, workflows]
 excerpt: "How we redefine software engineering by leveraging agentic AI to handle complexity, planning, and execution."

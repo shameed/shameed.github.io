@@ -2,6 +2,7 @@
 layout: post
 title: "API-First Architecture in Regulated Domains"
 date: 2025-04-01
+image: /assets/images/headers/2025-04-01-api-first-regulated.png
 categories: [Security & API]
 tags: [api-design, governance, architecture, compliance]
 excerpt: "How to design robust, compliant, and developer-friendly APIs for finance, healthcare, and insurance."
