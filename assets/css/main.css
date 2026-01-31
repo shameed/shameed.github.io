@@ -329,6 +329,40 @@
    .grid-2 {
      grid-template-columns: 1fr;
    }
+
+   /* Mobile Header Fixes */
+   .brand-text {
+     display: none;
+   }
+
+   header {
+     position: relative;
+     border-bottom: none;
+   }
+
+   /* Mobile Spacing Optimizations */
+   .reading-container {
+     padding: 16px !important;
+   }
+
+   .nav,
+   .container-narrow {
+     padding: 8px;
+   }
+
+
+   .nav-header {
+     padding: 12px 0;
+     margin-bottom: 24px;
+   }
+
+   .section-title {
+     margin-bottom: 16px;
+   }
+
+   .hero-section {
+     padding: 32px 0;
+   }
  }
 
  .focus-card {
@@ -439,8 +473,8 @@
      grid-template-columns: 1fr;
    }
 
-   #theme-toggle{
-    display: none;
+   #theme-toggle {
+     display: none;
    }
 
    .sidebar-sticky {
@@ -565,7 +599,7 @@
 
 
  /* --- Light Mode Theme --- */
- :root[data-theme="light"] {    
+ :root[data-theme="light"] {
    --bg-dark: #f8fafc;
    --bg-darker: #ffffff;
    --text-primary: #1e293b;
@@ -575,7 +609,7 @@
    --glass-border: rgba(0, 0, 0, 0.1);
    --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
    --bg-header: #1e293b;
-   --text-header:#f8fafc;
+   --text-header: #f8fafc;
  }
 
  :root[data-theme="light"] body {
@@ -873,6 +907,6 @@
  }
 
  :root[data-theme="light"] .post-header-container {
-  background: #0e7ad2 !important;
+   background: #0e7ad2 !important;
    /* Force dark background */
  }
