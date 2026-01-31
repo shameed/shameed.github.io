@@ -235,7 +235,7 @@ The framework is now [live on GitHub](https://github.com/shameed/ProTeam-Framewo
 
 ## Try It Yourself
 
-1. Clone the repository
+1. Clone the [repository](https://github.com/shameed/ProTeam-Framework)
 2. Copy `docs/kickoff-template.md` → `docs/kickoff.md`
 3. Fill in your project details
 4. Start with: "Initialize as pro-project-lead using docs/kickoff.md"
