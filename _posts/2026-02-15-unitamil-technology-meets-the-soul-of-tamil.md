@@ -16,7 +16,6 @@ excerpt: "Exploring UniTamil, an open-source initiative to preserve Tamil litera
 
 Tamil has survived kingdoms, invasions, oceans, and centuries. Yet today, in the digital age, it faces a quieter danger — **being unreadable**.
 
-![Historical Heritage of the Tamils](https://s3.ap-south-1.amazonaws.com/storage.commonfolks.in/docs/products/images_full/historical-heritage-of-the-tamils_FrontImage_240.jpg)
 
 ### When Tamil Became an Image, Not a Language
 
